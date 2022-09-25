@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="left_main" prefHeight="824.0" prefWidth="1330.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CommandeListController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITESMOKE" height="36.0" layoutX="20.0" layoutY="336.0" stroke="#1e2b3c" strokeType="OUTSIDE" strokeWidth="2.0" width="146.0" />
+      <TextField fx:id="NumCommandeTf" layoutX="200.0" layoutY="329.0" prefHeight="50.0" prefWidth="225.0" promptText="Numéro Commande" />
+      <Label layoutX="26.0" layoutY="337.0" prefHeight="34.0" prefWidth="150.0" styleClass="labelform" text="Numéro Commande">
+         <font>
+            <Font name="Gill Sans MT" size="16.0" />
+         </font></Label>
+      <Button layoutX="1040.0" layoutY="730.0" mnemonicParsing="false" onAction="#AjouterCommande" prefHeight="33.0" prefWidth="212.0" styleClass="search-button" stylesheets="@../Value/style.css" text="Ajouter Commande">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_delete" layoutX="50.0" layoutY="730.0" mnemonicParsing="false" onAction="#DeleteCommande" prefHeight="33.0" prefWidth="102.0" styleClass="search-button" stylesheets="@../Value/style.css" text="Delete">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_edit" layoutX="251.0" layoutY="730.0" mnemonicParsing="false" onAction="#EditCommande" prefHeight="33.0" prefWidth="102.0" styleClass="search-button" stylesheets="@../Value/style.css" text="Edit">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </Button>
+        
+      <TableView fx:id="CommandeTab" layoutX="495.0" layoutY="222.0" onMouseClicked="#fillforum" prefHeight="487.0" prefWidth="575.0">
+        <columns>
+          <TableColumn fx:id="IDCommandeTab" prefWidth="93.60003662109375" text="ID Commande" />
+            <TableColumn fx:id="NumeroCommandeTab" prefWidth="202.0" text="Numéro Comande" />
+          <TableColumn fx:id="DateTab" prefWidth="114.0" text="Date Commande" />
+            <TableColumn fx:id="TotalcmdTab" minWidth="0.0" prefWidth="140.0" text="Total commande" />
+        </columns>
+      </TableView>
+      <Pane layoutX="-23.0" layoutY="-7.0" prefHeight="175.0" prefWidth="1400.0" style="-fx-background-color: BAB7A4;">
+         <children>
+            <ImageView fitHeight="116.0" fitWidth="243.0" layoutX="43.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/logo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="1077.0" layoutY="51.0" prefHeight="52.0" prefWidth="310.0" styleClass="search-box" stylesheets="@../Value/style.css">
+               <children>
+                  <TextField fx:id="TFSearch" prefHeight="50.0" prefWidth="180.0" promptText="Type here to search" styleClass="transparent" stylesheets="@../Value/style.css">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Label layoutX="1099.0" layoutY="128.0" prefHeight="17.0" prefWidth="135.0" text="Nombre commande" textFill="#fcf9f9">
+               <font>
+                  <Font name="Century Gothic Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="NombreCommande" layoutX="1243.0" layoutY="128.0" prefHeight="21.0" prefWidth="87.0" textFill="#fcf9f9">
+               <font>
+                  <Font name="Century Gothic Italic" size="15.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITESMOKE" height="36.0" layoutX="16.0" layoutY="601.0" stroke="#1e2b3c" strokeType="OUTSIDE" strokeWidth="2.0" width="146.0" />
+      <Label layoutX="22.0" layoutY="602.0" prefHeight="34.0" prefWidth="135.0" styleClass="labelform" text="Total Commande">
+         <font>
+            <Font name="Gill Sans MT" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TotalcmdTf" layoutX="196.0" layoutY="594.0" prefHeight="50.0" prefWidth="225.0" promptText="Total Commande" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITESMOKE" height="36.0" layoutX="16.0" layoutY="469.0" stroke="#1e2b3c" strokeType="OUTSIDE" strokeWidth="2.0" width="146.0" />
+      <Label layoutX="24.0" layoutY="469.0" prefHeight="34.0" prefWidth="135.0" styleClass="labelform" text="Date Commande">
+         <font>
+            <Font name="Gill Sans MT" size="19.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf9f3" height="86.0" layoutX="564.0" layoutY="122.0" stroke="#1e2b3c" strokeType="OUTSIDE" strokeWidth="5.0" width="388.0" />
+      <Label layoutX="640.0" layoutY="106.0" prefHeight="96.0" prefWidth="271.0" text="Commande" textFill="#edce0b">
+         <font>
+            <Font name="Harlow Solid Italic" size="57.0" />
+         </font>
+      </Label>
+      <Button fx:id="Statistique" layoutX="444.0" layoutY="730.0" mnemonicParsing="false" onAction="#Statistique" prefHeight="33.0" prefWidth="135.0" styleClass="search-button" stylesheets="@../Value/style.css" text="Statistique">
+         <font>
+            <Font name="Times New Roman Bold" size="19.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="datecmd" layoutX="196.0" layoutY="466.0" prefHeight="40.0" prefWidth="225.0" promptText="Date Commande" />
+      
+   </children>
+</AnchorPane>
